@@ -13,11 +13,9 @@ import json
 
 
 # plt.ion(x, )
-class Our_L1forExtractAttentionOut_With_DropOut(object):
+class Our_L1_SA_U_Net(object):
     """
-    my prediction 17 v4 from my prediction 171 change  :- Top multi-kernels:
-    replace top multi-path with one single alignedpip xception block with the same number of output feature maps.
-
+    This is the SA-UNet main code
     """
 
     # initialize model
@@ -58,7 +56,7 @@ class Our_L1forExtractAttentionOut_With_DropOut(object):
         self.weight_decay = 0.0001
 
         #
-        self.model_name = "Our_L1forExtractAttentionOut_With_DropOut"
+        self.model_name = "SA_UNET_L1"
 
         self.num_epoch = 100 # Total number of epoches
         self.batch_size = 2  # Training batch size
@@ -1808,9 +1806,9 @@ class Our_L1forExtractAttentionOut_With_DropOut(object):
 def main():
     # Define model parameters and options in dictionary of flags
     # FLAGS = getFlags_PSPNet( )
-    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     # Initialize model
-    model = Our_L1forExtractAttentionOut_With_DropOut()
+    model = Our_L1_SA_U_Net()
 
     # Specify number of training steps
     training_steps = model.num_batches
